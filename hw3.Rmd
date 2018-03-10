@@ -1,0 +1,120 @@
+---
+title: "Homework 4"
+author: Your Name Here
+date: Due 2/27/2017 by 11:59 pm
+output: 
+  html_document:
+    theme: cosmo
+---
+
+### Question 1
+
+<i>The `forecast` package contains a dataset called `gas` which contains monthly gas production in Australia between 1956 and 1995. Fit an appropriate seasonal ARIMA model to these data, choose and justify your choice of $p$, $d$, and $q$ for the local and seasonal components. Be sure to include any EDA and residual analyses you perform.</i>
+
+```{r}
+
+```
+
+-----
+
+### Question 2
+
+<i>The `forecast` package also contains a dataset called `taylor` which contains Half-hourly electricity demand in England and Wales from Monday 5 June 2000 to Sunday 27 August 2000. Fit an appropriate seasonal ARIMA model to these data, choose and justify your choice of $p$, $d$, and $q$ for the local an seasonal components. Be sure to include any EDA and residual analyses you perform.</i>
+
+```{r}
+
+```
+
+-----
+
+## Question 3
+
+<i>Derive the **7** step ahead prediction, $E(y_{n+7}|y_n,\ldots,y_1,\ldots)$,</i>
+
+a. <i>for an ARIMA(1,1,0)$\times$(1,1,0)_6 seasonal model</i>
+
+$$ \begin{aligned}
+~
+\end{aligned} $$
+
+
+b. <i>for an ARIMA(1,1,0)$\times$(0,1,1)_6 seasonal model</i>
+
+$$ \begin{aligned}
+~
+\end{aligned} $$
+
+
+-----
+
+### Question 4
+
+<i> Assume you are given a bivariate normal distribution, $Y = (y_1, y_2)^t$, with $\mu = (\mu_1, \mu_2)^t$ and $\Sigma = \begin{pmatrix}\sigma^2 & \rho \, \sigma^2 \\ \rho \, \sigma^2 & \sigma^2\end{pmatrix}$ where $\sigma > 0$ and $0 \leq \rho \leq 1$. </i>'
+
+<br/>
+
+a. <i> Show that the marginal distribution of $y_1$ is given by $y_1 \sim \mathcal{N}(\mu_1, \sigma^2)$.</i>
+
+$$\begin{aligned}
+~
+\end{aligned}$$
+
+b. <i> Show that the conditional distribution of $y_1|y_2 = a$ is given by $y_1|y_2 = a \sim \mathcal{N}(\mu_1 + \rho(a-\mu_2),\sigma^2-\rho^2\sigma^2).$</i>
+
+$$\begin{aligned}
+~
+\end{aligned}$$
+
+-----
+
+### Question 5
+
+a. <i> Construct a Gibbs sampler for generating 1000 samples from a multivariate normal distribution where </i>
+$$
+\mu = (1,2,3)^t \\
+\\
+\Sigma = \begin{pmatrix} 
+3   & 0.5 & 1   \\
+0.5 & 2   & 1.5 \\
+1   & 1.5 & 3.5
+\end{pmatrix}
+$$
+
+```{r}
+```
+
+b. <i> Using the matrix "square root" method described in class, generate another 1000 samples from the multivariate normal described above. </i>
+
+```{r}
+```
+
+c. <i> For both sampling method create 3 bivariate density plots showing the relationship between each pair of dimensions (e.g. 1 vs. 2, 2 vs. 3, 1 vs 3). Compare these plots between the sampling methods and note any similarity or discrepancies. </i>
+
+```{r}
+```
+
+-----
+
+### Question 6
+
+<i>This repository includes two rds files called `gp.rds` and `gp_truth.rds` that contains observed data as well as sample from the underlying true process respectively.</i> 
+
+a. <i>Fit a Gaussian process model by first fitting a linear model to the data and then examining any remaining dependence using a variogram. Based on the variogram (roughly) estimate $\sigma^2$, $l$, and $\sigma^2_w$. Using this estimates along with the $\beta$s from the lm construct an appropriate multivariate normal distribution for these data and construct the appropriate predictive distribution at the `x` locations given in `gp_truth`. Generate at least 1000 samples from this distribution, using these draws create a best fit line and prediction interval for your model.</i>
+
+```{r}
+
+```
+
+
+b. <i>Fit a full Bayesian Gaussian process model using JAGs or similar software. Make sure to think about what covariance function seems appropriate and include any relevant mean structure. Generate draws from the full posterior predictive distribution at the `x` locations given in `gp_truth`, use draw a best fit line and posterior predictive credible intervalfor your model.</i>
+
+```{r}
+
+```
+
+
+c. <i>Compare the predictive performance of both approaches, using the `y` values in `gp_truth`. Which method appeared to perform better? Why?</i>
+
+```{r}
+
+```
